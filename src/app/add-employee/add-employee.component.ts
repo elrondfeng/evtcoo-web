@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientService, Employee } from '../service/httpclient.service';
+import { HttpClientService, Employee, EV, ICE } from '../service/httpclient.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -8,7 +8,11 @@ import { HttpClientService, Employee } from '../service/httpclient.service';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  user: Employee = new Employee("","","","");
+  user: Employee = new Employee('', '', '', '');
+
+  ev: EV = new EV('', '', '', '', '', '', '', '', '', '');
+  ice: ICE = new ICE('', '', '', '', '', '', '');
+
 
   constructor(
     private httpClientService: HttpClientService
@@ -20,9 +24,22 @@ export class AddEmployeeComponent implements OnInit {
   createEmployee(): void {
     this.httpClientService.createEmployee(this.user)
         .subscribe( data => {
-          alert("Employee created successfully.");
+          alert('Employee created successfully.');
         });
+  }
 
-  };
+  calculateEV(): void {
+    this.httpClientService.calculateEV((this.ev))
+      .subscribe(data => {
+        alert(data);
+      });
+  }
+
+  calculateICE(): void {
+    this.httpClientService.calculateICE((this.ice))
+      .subscribe(data => {
+        alert(data);
+      });
+  }
 
 }

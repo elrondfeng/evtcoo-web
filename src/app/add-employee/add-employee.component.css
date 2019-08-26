@@ -1,0 +1,17 @@
+
+.main.row{
+  margin:auto;
+  background-color:#f0f0f5;
+}
+
+h1{
+  margin:30px;
+  font-weight: bold;
+}
+
+button{
+  max-width: 90%;
+  margin: 0 auto  20px ;
+}
+
+
