@@ -1,17 +1,39 @@
 
 .main.row{
   margin:auto;
+}
+
+.side-half{
   background-color:#f0f0f5;
 }
 
 h1{
   margin:30px;
   font-weight: bold;
+  color:#207A0F;
 }
 
 button{
   max-width: 90%;
-  margin: 0 auto  20px ;
+  margin: 20px auto  20px ;
+  font-size:1.5em;
+}
+
+.main{
+  max-width: 90%;
+  margin: 50px auto;
+}
+
+.form-group {
+  font-size: 1.5em;
+  color:#207A0F;
+  font-weight: bold;
+}
+
+input {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #52b6ec;
 }
 
 
