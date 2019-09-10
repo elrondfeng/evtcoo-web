@@ -12,32 +12,31 @@ export class Employee {
 
 export class EV {
   constructor(
-    public vehiclePrice: string,
-    public infrastructureUpgrade: string,
-    public maintenanceCost: string,
-    public lifelongMiles: string,
-    public milesPerKWH: string,
-    public batteryLeasingCost: string,
-    public batteryReplacementCost: string,
-    public dollarsPerKWH: string,
-    public milesPerDay: string,
-    public daysPerYear: string
-  ) { }
+    public  vehiclePrice: number,
+    public  evMaintenanceSaving: number,
+    public  infrastructureUpgrade: number,
+    public  lifelongMiles: number,
+    public  milesPerKWH: number,
+    public  dollarsPerKWH: number,
+    public  batteryLeasingCost: number,
+    public  batteryReplacementCost: number,
+    public  milesPerDay: number,
+    public  daysPerYear: number,
+    public  iceMaintenanceCost: number
+  ) {}
 }
 
 export class ICE {
   constructor(
-    public vehiclePrice: string,
-    public maintenanceCost: string,
-    public lifelongMiles: string,
-    public MPG: string,
-    public dollarsPerGallon: string,
-    public milesPerDay: string,
-    public daysPerYear: string
+    public vehiclePrice: number,
+    public maintenanceCost: number,
+    public lifelongMiles: number,
+    public milesPerGallon: number,
+    public dollarsPerGallon: number,
+    public milesPerDay: number,
+    public daysPerYear: number
   ) {}
 }
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -62,10 +61,10 @@ export class HttpClientService {
   }
 
   public calculateEV(ev) {
-    return this.httpClient.post<EV>('http://localhost:8080/ev', ev);
+    return this.httpClient.post<number>('http://localhost:8080/ev', ev);
   }
 
   public calculateICE(ice) {
-    return this.httpClient.post<ICE>('http://localhost:8080/ice', ice);
+    return this.httpClient.post<number>('http://localhost:8080/ice', ice);
   }
 }

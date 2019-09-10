@@ -4,18 +4,26 @@
       <h1 class="text-center ">EV</h1>
       <form>
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
-            <label for="EVVehiclePrice">Vehicle price ($) </label>
+          <div class="col-md-5 offset-md-1">
+            <label for="EVVehiclePrice">Vehicle price($) </label>
           </div>
           <div class="col-md-4">
-            <input [(ngModel)]="ev.vehiclePrice" name="vehiclePrice" class="form-control"
-                   id="EVVehiclePrice">
+            <input [(ngModel)]="ev.vehiclePrice" name="vehiclePrice" class="form-control"  id="EVVehiclePrice">
           </div>
         </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
-            <label for="infrastructureUpgrade">Infrastructure Upgrade </label>
+          <div class="col-md-5 offset-md-1">
+            <label for="evMaintenanceSaving">EV Maintenance saving</label>
+          </div>
+          <div class="col-md-4">
+            <input [(ngModel)]="ev.evMaintenanceSaving" name="evMaintenanceSaving" class="form-control" id="evMaintenanceSaving">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-5 offset-md-1">
+            <label for="infrastructureUpgrade">Infrastructure Upgrade($) </label>
           </div>
           <div class="col-md-4">
             <input [(ngModel)]="ev.infrastructureUpgrade"
@@ -24,18 +32,9 @@
           </div>
         </div>
 
-        <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
-            <label for="maintenanceCost">Maintenance Cost</label>
-          </div>
-          <div class="col-md-4">
-            <input [(ngModel)]="ev.maintenanceCost" name="maintenanceCost"
-                   class="form-control" id="maintenanceCost">
-          </div>
-        </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
+          <div class="col-md-5 offset-md-1">
             <label for="lifelongMiles">Lifelong Miles</label>
           </div>
           <div class="col-md-4">
@@ -45,7 +44,7 @@
         </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
+          <div class="col-md-5 offset-md-1">
             <label for="milesPerKWH">Miles Per KWH</label>
           </div>
           <div class="col-md-4">
@@ -54,10 +53,19 @@
           </div>
         </div>
 
+        <div class="form-group row">
+          <div class="col-md-5 offset-md-1">
+            <label for="dollarsPerKWH">Dollars Per KWH</label>
+          </div>
+          <div class="col-md-4">
+            <input [(ngModel)]="ev.dollarsPerKWH" name="dollarsPerKWH" class="form-control"
+                   id="dollarsPerKWH">
+          </div>
+        </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
-            <label for="batteryLeasingCost">Battery Leasing Cost</label>
+          <div class="col-md-5 offset-md-1">
+            <label for="batteryLeasingCost">Battery Leasing Cost($/mile)</label>
           </div>
           <div class="col-md-4">
             <input [(ngModel)]="ev.batteryLeasingCost" name="batteryLeasingCost"
@@ -67,8 +75,8 @@
 
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
-            <label for="batteryReplacementCost">Battery Replacement Cost</label>
+          <div class="col-md-5 offset-md-1">
+            <label for="batteryReplacementCost">Battery Replacement Cost($)</label>
           </div>
           <div class="col-md-4">
             <input [(ngModel)]="ev.batteryReplacementCost"
@@ -77,18 +85,7 @@
         </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
-            <label for="dollarsPerKWH">Dollars Per KWH</label>
-          </div>
-          <div class="col-md-4">
-            <input [(ngModel)]="ev.dollarsPerKWH" name="dollarsPerKWH" class="form-control"
-                   id="dollarsPerKWH">
-          </div>
-        </div>
-
-
-        <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
+          <div class="col-md-5 offset-md-1">
             <label for="milesPerDay">Miles Per Day</label>
           </div>
           <div class="col-md-4">
@@ -98,7 +95,7 @@
         </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
+          <div class="col-md-5 offset-md-1">
             <label for="daysPerYear">Days Per Year</label>
           </div>
           <div class="col-md-4">
@@ -110,6 +107,15 @@
           <button (click)="calculateEV()" class="btn btn-success">Calculate EV</button>
         </div>
       </form>
+
+      <div class="row calc-result result-group">
+        <div class="col-md-5 offset-md-1">
+          <label for="ev_dollarPerMile">Dollar Per Mile($)</label>
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="evDollarPerMile" name="ev_dollarPerMile" class="result-text-box" id="ev_dollarPerMile" readonly />
+        </div>
+      </div>
     </div>
 
 
@@ -117,8 +123,8 @@
       <h1 class="text-center">ICE</h1>
       <form>
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
-            <label for="ICEVehiclePrice">Vehicle price ($) </label>
+          <div class="col-md-5 offset-md-1">
+            <label for="ICEVehiclePrice">Vehicle price($) </label>
           </div>
           <div class="col-md-4">
             <input [(ngModel)]="ice.vehiclePrice" name="vehiclePrice" class="form-control"
@@ -127,8 +133,8 @@
         </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
-            <label for="ICEMaintenanceCost">Maintenance Cost</label>
+          <div class="col-md-5 offset-md-1">
+            <label for="ICEMaintenanceCost">Maintenance Cost($/mile)</label>
           </div>
           <div class="col-md-4">
             <input [(ngModel)]="ice.maintenanceCost" name="maintenanceCost"
@@ -137,37 +143,35 @@
         </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
+          <div class="col-md-5 offset-md-1">
             <label for="ICELifelongMiles">Lifelong Miles</label>
           </div>
           <div class="col-md-4">
-            <input [(ngModel)]="ice.lifelongMiles" name="lifelongMiles" class="form-control"
-                   id="ICELifelongMiles">
+            <input [(ngModel)]="ice.lifelongMiles" name="lifelongMiles" class="form-control" id="ICELifelongMiles">
           </div>
         </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
+          <div class="col-md-5 offset-md-1">
             <label for="MPG">MPG</label>
           </div>
           <div class="col-md-4">
-            <input [(ngModel)]="ice.MPG" name="MPG" class="form-control" id="MPG">
+            <input [(ngModel)]="ice.milesPerGallon" name="MPG" class="form-control" id="MPG">
           </div>
         </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
-            <label for="dollarsPerGallon">Dollars Per Gallon</label>
+          <div class="col-md-5 offset-md-1">
+            <label for="dollarsPerGallon">Dollars Per Gallon($)</label>
           </div>
           <div class="col-md-4">
-            <input [(ngModel)]="ice.dollarsPerGallon" name="dollarsPerGallon"
-                   class="form-control" id="dollarsPerGallon">
+            <input [(ngModel)]="ice.dollarsPerGallon" name="dollarsPerGallon" class="form-control" id="dollarsPerGallon">
           </div>
         </div>
 
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
+          <div class="col-md-5 offset-md-1">
             <label for="ICEMilesPerDay">Miles Per Day</label>
           </div>
           <div class="col-md-4">
@@ -177,7 +181,7 @@
         </div>
 
         <div class="form-group row">
-          <div class="col-md-4 offset-md-2">
+          <div class="col-md-5 offset-md-1">
             <label for="ICEDaysPerYear">Days Per Year</label>
           </div>
           <div class="col-md-4">
@@ -189,6 +193,15 @@
           <button (click)="calculateICE()" class="btn btn-success">Calculate ICE</button>
         </div>
       </form>
+
+      <div class="row calc-result result-group">
+        <div class="col-md-5 offset-md-1">
+          <label for="ice_dollarPerMile">Dollar Per Mile</label>
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="iceDollarPerMile" name="ice_dollarPerMile" class="result-text-box" id="ice_dollarPerMile" readonly />
+        </div>
+      </div>
     </div>
 
   </div>
