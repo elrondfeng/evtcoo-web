@@ -55,16 +55,6 @@
 
         <div class="form-group row">
           <div class="col-md-5 offset-md-1">
-            <label for="dollarsPerKWH">Dollars Per KWH</label>
-          </div>
-          <div class="col-md-4">
-            <input [(ngModel)]="ev.dollarsPerKWH" name="dollarsPerKWH" class="form-control"
-                   id="dollarsPerKWH">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="col-md-5 offset-md-1">
             <label for="batteryLeasingCost">Battery Leasing Cost($/mile)</label>
           </div>
           <div class="col-md-4">
@@ -103,6 +93,21 @@
                    id="daysPerYear">
           </div>
         </div>
+
+        <div class="row">
+          <button (click)="calculateEV()" class="btn btn-success">Calculate Dollar Per KWH</button>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-5 offset-md-1">
+            <label for="dollarsPerKWH">Dollars Per KWH</label>
+          </div>
+          <div class="col-md-4">
+            <input [(ngModel)]="ev.dollarsPerKWH" name="dollarsPerKWH" class="form-control"
+                   id="dollarsPerKWH">
+          </div>
+        </div>
+
         <div class="row">
           <button (click)="calculateEV()" class="btn btn-success">Calculate EV</button>
         </div>
